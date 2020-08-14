@@ -9,5 +9,6 @@
 <body>
 <p> ${ResponseType } </p>
 hello
+<p> ${methodname} </p> 
 </body>
 </html>

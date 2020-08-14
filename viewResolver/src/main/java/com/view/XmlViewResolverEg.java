@@ -16,7 +16,7 @@ public class XmlViewResolverEg {
 	
 	@RequestMapping("/xmlViewResolver")
 	@ResponseBody
-	public String display(@RequestParam("name")String name, ModelMap mp)
+	public String display(@RequestParam(required=false)String name, ModelMap mp)
 	{
 		
 		mp.addAttribute("ResponseType", "XMLViewResolver Printed");

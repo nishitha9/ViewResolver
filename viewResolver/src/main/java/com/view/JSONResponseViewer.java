@@ -1,6 +1,8 @@
 package com.view;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +47,7 @@ public class JSONResponseViewer extends HttpServlet{
 		
 		JSONObject json=new JSONObject();
 
+		//Adding elements and array values
 		
 		json.put("name","Nishitha");
 		json.put("Value",101);
@@ -54,17 +57,34 @@ public class JSONResponseViewer extends HttpServlet{
 		arr.add("hey");
 		json.put("arrayList",arr);
 		
+		//creating class object
 		CreateProduct c=new CreateProduct();
 		c.setName("ToyCar");
 		c.setNumber(101);
 		c.setFeatures("A car with battery control");
 		
 		json.put("Toycar",c);
-		ArrayList<Object> arr1= (ArrayList<Object>) json.get("arrayList");
+		ArrayList<Object> arr1= (ArrayList<Object>) json.get("arrayList");  //JSONString to java object 
+		
+		//Creating and adding map . 
+		
+		Map<String,Object> hashmap=new HashMap<String,Object>();
+		hashmap.put("name", "name1");
+		hashmap.put("number", 1010);
+		
+		json.put("Map", hashmap);
+		
+		String jsonString=JSONValue.toJSONString(hashmap);
+		
+		System.out.println(jsonString);
 		System.out.println(arr1.get(2));
 		System.out.println(json.get("name"));
 		System.out.println(json.get("arrayList"));
-		return json.toJSONString();
+
+		
+		
+		
+		return json.toString();
 	}
 	
 
