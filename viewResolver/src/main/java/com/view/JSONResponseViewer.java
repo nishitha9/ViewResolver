@@ -73,6 +73,7 @@ public class JSONResponseViewer extends HttpServlet{
 		hashmap.put("number", 1010);
 		
 		json.put("Map", hashmap);
+	//	json.
 		
 		String jsonString=JSONValue.toJSONString(hashmap);
 		
