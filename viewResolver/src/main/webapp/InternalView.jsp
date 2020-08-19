@@ -9,7 +9,5 @@
 <body>
 <p> ${ResponseType } </p>
  ${name } 
- Internal View HTML page- demo content!! 
- Page added! 
 </body>
 </html>
